@@ -1,0 +1,70 @@
+#nav-bar {
+    overflow-y: hidden !important;
+    margin-bottom: -2.70em;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    opacity: 0;
+    transition: opacity 0.2s, max-height 0.2s;
+    margin-top: -1px !important; border-top-width: -1px !important;
+}
+:hover > #nav-bar { 
+    max-height: 2.70em !important;
+    opacity: 1;
+    transition: opacity 0.2s;
+} 
+
+/*
+ * Only show close buttons on background tabs when hovering with the mouse
+ *
+ * Contributor(s): Timvde
+ */
+
+.tabbrowser-tab:not([selected]):not([pinned]) .tab-close-button {
+  display: none !important;
+}
+
+.tabbrowser-tab:not([selected]):not([pinned]):hover .tab-close-button {
+  display: -moz-box !important;
+}
+/* 
+* Makes tabs only 22px high rather than the default 29px
+* Only works on compact mode, otherwise tab height will be normal
+*
+* Contributor(s): DrPugsley
+*/
+
+[uidensity="compact"]:root {
+  --tab-min-height: 27px !important;
+  --newtab-margin: -3px 0 -3px -3px !important;
+}
+
+.tabbrowser-tab {
+  max-height: var(--tab-min-height) !important;
+}
+
+.tabs-newtab-button{
+  margin: var(--newtab-margin) !important;
+}
+
+#tabbrowser-tabs {
+    --tab-line-color: #FFEEC3 !important;   
+    background-color: #221b1b !important;
+}
+:root:-moz-lwtheme-brighttext {
+    --chrome-background-color: #221b1b !important;
+    --chrome-color: rgb(249, 249, 250);
+    --chrome-secondary-background-color: #352a2a !important;
+    --toolbox-border-bottom-color: #ffeec3 !important;
+    --chrome-nav-bar-separator-color: #ffeec3 !important;
+    --chrome-nav-buttons-background: #ffeec3 !important;
+    --chrome-nav-buttons-hover-background: hsla(240, 5%, 5%, .15);
+    --chrome-nav-bar-controls-border-color: #ffeec3 !important;
+    --chrome-selection-color: #fff;
+    --chrome-selection-background-color: #5675B9;
+    --url-and-searchbar-background-color: #221b1b !important;
+    --url-and-searchbar-color: #ffeec3;
+    --urlbar-separator-color: #5F6670;
+}
+.tabbrowser-tab:not([visuallyselected="true"]), .tabbrowser-tab:-moz-lwtheme {
+    color: #ffeec3 !important;
+}
